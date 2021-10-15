@@ -15,4 +15,13 @@ html, body{
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 8px rgb(61, 61, 61);
+
+   
 }
+
+#header nav a{
+    color: rgb(138, 138, 138);
+    text-decoration: none;
+    padding: 20px;
+}
+

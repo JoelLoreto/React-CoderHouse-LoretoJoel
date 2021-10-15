@@ -1,12 +1,15 @@
-const Header = () => {
-    return (
-        <header id="header" className='header1 header2'>
-            <h1>Jack Bazar</h1>
-            <nav>
-                <a href="#">Categorias</a>
-                <a href="#">Login</a>
+import Nav from './Nav'
 
-            </nav>
+const Header = ({ nombre, apellido }) => {
+    return (
+        <header id="header">
+            <h1>Jack Bazar</h1>
+            <p>Bienvenido {nombre} {apellido}</p>
+            <span className="material-icons">
+                <a href='#'>shopping_cart</a>
+            </span>
+
+            <Nav />
         </header>
 
     )

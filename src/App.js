@@ -1,12 +1,14 @@
 import Header from "./components/Header";
+import Footer from './components/Footer'
 
 const App = () => {
     return (
         <>
-            <Header />
-            <footer>
-                <p>CopyRight &CopyRight</p>
-            </footer>
+            <Header
+                nombre='Joel'
+                apellido='Loreto'
+            />
+            <Footer />
         </>
     )
 }
