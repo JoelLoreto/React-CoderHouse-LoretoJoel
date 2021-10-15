@@ -1,6 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import App from "./App"
+import "./index.css"
 
-const Elemento = () => <h1>Coder House React</h1>
 
-ReactDOM.render(<Elemento />, document.getElementById("root"))
+
+ReactDOM.render(<App />, document.getElementById("root"))
