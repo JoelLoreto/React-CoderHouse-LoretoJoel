@@ -1,4 +1,6 @@
 import Header from "./components/Header";
+import Productos from "./components/Productos";
+import Main from "./components/Main"
 import Footer from './components/Footer'
 
 const App = () => {
@@ -8,6 +10,8 @@ const App = () => {
                 nombre='Joel'
                 apellido='Loreto'
             />
+            <Main />
+            <Productos />
             <Footer />
         </>
     )
