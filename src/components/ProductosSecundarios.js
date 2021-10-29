@@ -1,6 +1,6 @@
-import deco2 from '../media/deco2.jpg'
+/* import deco2 from '../media/deco2.jpg'
 
-const Productos = () => {
+const ProductosSecundarios = () => {
     return (
         <>
             <h2>Productos</h2>
@@ -9,4 +9,4 @@ const Productos = () => {
     )
 }
 
-export default Productos
+export default ProductosSecundarios */
