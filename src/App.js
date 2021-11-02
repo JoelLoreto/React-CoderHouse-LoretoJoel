@@ -1,19 +1,21 @@
 import Header from "./components/Header";
 import Main from "./components/Main"
 import Footer from './components/Footer'
-import Container from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+/* import ItemListContainer from "./components/ItemListContainer"; */
 
 
 
 const App = () => {
     return (
         <>
-            <Header />
-            <Main />
-            <Container
+            <Header
                 nombre='Joel'
-                apellido='Loreto'
-            />
+                apellido='Loreto' />
+            <Main />
+            {/* <ItemListContainer
+            /> */}
+            <ItemDetailContainer />
             <Footer />
         </>
     )
