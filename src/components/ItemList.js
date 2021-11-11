@@ -4,19 +4,13 @@ const ItemList = ({ productos }) => {
 
     return (
         <>
-            {productos.map((producto) => {
-                return (
-                    <Item
-                        key={producto.id}
-                        title={producto.title}
-                        id={producto.id}
-                        image={producto.image}
-                        price={producto.price}
-                    />
-                )
-            }
-            )}
-
+            {productos && productos.length > 0 ?
+                productos.map(item => {
+                    return <div key={item.id}>
+                        <Item item={item} />
+                    </div>
+                })
+                : "Error"}
         </>
     )
 }

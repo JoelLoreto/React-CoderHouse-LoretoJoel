@@ -1,33 +1,28 @@
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useParams } from "wouter";
 import ItemList from "./ItemList";
+import productos from "../json/Productos.json"
 
-const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState([])
+const ItemListContainer = (param) => {
 
-    const getData = () => {
+    const { categoriaId } = useParams()
+    const [items, setItems] = useState([])
 
-        fetch("/Productos.json")
-            .then(function (response) {
-
-                return response.json()
-            })
-
-            .then(function (productosJson) {
-                setProductos(productosJson)
-            })
-
-    }
 
     useEffect(() => {
 
         setTimeout(() => {
 
-            getData()
+            if (categoriaId) {
+                const productos_filter = productos.filter(producto => producto.category === categoriaId)
+                setItems(productos_filter)
+            } else {
+                setItems(productos)
+            }
 
         }, 2000)
-    }, [])
+    }, [categoriaId])
 
     if (productos.length === 0) {
         return (
@@ -37,7 +32,7 @@ const ItemListContainer = () => {
     } else {
         return (
             <>
-                <ItemList productos={productos} />
+                <ItemList productos={items} />
             </>
         )
     }

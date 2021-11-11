@@ -1,30 +1,21 @@
-
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useParams } from "wouter";
 import ItemDetail from "./ItemDetail";
+import productos from "../json/Productos.json"
 
 const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([])
+    const { id } = useParams()
+    const [item, setItem] = useState([])
 
-
-    const getData = () => {
-
-        fetch('https://fakestoreapi.com/products')
-            .then((data) => {
-                const productos_de_api = data.json()
-                return productos_de_api
-            })
-            .then((array_de_productos) => {
-                setProductos(array_de_productos)
-            })
-    }
 
     useEffect(() => {
 
         setTimeout(() => {
 
-            getData()
+            setItem(
+                productos.filter(item => item.id === parseInt(id))
+            )
 
         }, 2000)
     }, [])
@@ -37,11 +28,10 @@ const ItemDetailContainer = () => {
     } else {
         return (
             <>
-                <ItemDetail productos={productos} />
+                <ItemDetail productos={item} />
             </>
         )
     }
 }
 
 export default ItemDetailContainer
-
